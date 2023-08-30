@@ -79,3 +79,22 @@ function summingUp(e) {
         secondOperand = "";
     } 
 }
+
+const backspace = document.querySelector('.backspace');
+backspace.addEventListener('click', (e) => {
+    if ((!(firstOperand == "")) && (!(operator == "")) && (!(secondOperand == ""))) {
+        let arrayOfDigits = secondOperand.toString().split('')
+        arrayOfDigits.pop()
+        secondOperand = arrayOfDigits.join('')
+        display2.textContent = secondOperand
+    } else if ((!(firstOperand == "")) && (!(operator == "")) && (secondOperand == "")) {
+        operator = ''
+        display1.textContent = ''
+        display2.textContent = firstOperand
+    } else if ((!(firstOperand == "")) && (operator == "") && (secondOperand == "")) {
+        arrayOfDigits = firstOperand.toString().split('')
+        arrayOfDigits.pop()
+        firstOperand = arrayOfDigits.join('')
+        display2.textContent = firstOperand
+    }
+})
