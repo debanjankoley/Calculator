@@ -60,7 +60,11 @@ equalTo.addEventListener("click", (e) => {
         display1.textContent = firstOperand + " " + operator + " " + secondOperand + " = "
     }
     summingUp(e);
-    display2.textContent = firstOperand
+    if (firstOperand == 69) {
+        display2.textContent = "😏"
+    } else {
+        display2.textContent = firstOperand
+    }
     operator = "";
 })
 
