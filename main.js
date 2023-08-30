@@ -54,9 +54,6 @@ const equalTo = document.querySelector('.equalTo');
 equalTo.addEventListener("click", (e) => {
     summingUp(e);
     display.textContent = firstOperand
-    firstOperand = "";
-    secondOperand = "";
-    operator = "";
 })
 
 const clearButton = document.querySelector('.clearButton');
@@ -64,12 +61,13 @@ clearButton.addEventListener('click', (e) => {
     firstOperand = "";
     secondOperand = "";
     operator = "";
-    display.textContent = "0"
+    display.textContent = ""
 })
 
 function summingUp(e) {
     if (!(secondOperand === "")) {
         firstOperand = operate();
-        secondOperand = "";  
+        secondOperand = "";
+        operator = ""; 
     } 
 }

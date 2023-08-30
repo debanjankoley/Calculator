@@ -1,5 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-size: large;
+}
+
 .display {
-    width: 200px;
-    height: 100px;
+    height: 140px;
     border: 1px solid black;
+    background-color: aqua;
+    margin: 10px;
+    text-align: end;
+    font-size: xx-large;
+}
+
+button {
+    display: block;
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid coral;
+    max-width: 400px;
+    height: 550px;
+}
+
+.clear-section {
+    display: flex;
+}
+
+.clear-section button {
+    flex: 1;
+    min-height: 50px;
+    margin: 0 10px 10px;
+}
+
+.keys-container {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 9px;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.keys-container button {
+    width: 22%;
 }
