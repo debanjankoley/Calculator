@@ -4,32 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main-container">
-        <div class="display"></div>
+        <div class="display-container">
+            <div class="display1"></div>
+            <div class="display2"></div>
+        </div>
         <div class="clear-section">
-            <button class="clearButton">clear</button>
-            <button class="backspace">back</button>
+            <button class="clearButton">CLEAR</button>
+            <button class="backspace">DELETE</button>
         </div>
         <div class="keys-container">
-            <button class="numbers">1</button>
-            <button class="numbers">2</button>
-            <button class="numbers">3</button>
-            <button class="numbers">4</button>
-            <button class="numbers">5</button>
-            <button class="numbers">6</button>
             <button class="numbers">7</button>
             <button class="numbers">8</button>
             <button class="numbers">9</button>
+            <button class="sign">/</button>
+            <button class="numbers">4</button>
+            <button class="numbers">5</button>
+            <button class="numbers">6</button>
+            <button class="sign">x</button>
+            <button class="numbers">1</button>
+            <button class="numbers">2</button>
+            <button class="numbers">3</button>
+            <button class="sign">-</button>
             <button class="numbers">0</button>
             <button class="decimal">.</button>
             <button class="equalTo">=</button>
             <button class="sign">+</button>
-            <button class="sign">-</button>
-            <button class="sign">*</button>
-            <button class="sign">/</button>
         </div>
     </div>
     <script src="main.js"></script>
