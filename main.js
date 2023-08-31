@@ -3,15 +3,15 @@ function addition(a, b) {
 }
 
 function multiplication(a, b) {
-    return a * b;
+    return +a * +b;
 }
 
 function substraction(a , b) {
-    return a - b;
+    return +a - +b;
 }
 
 function division(a, b) {
-    return a / b;
+    return +a / +b;
 }
 
 let firstOperand = ''
@@ -47,12 +47,12 @@ const display2 = document.querySelector('.display2');
 
 const numbers = document.querySelectorAll('.numbers');
 numbers.forEach(button => button.addEventListener('click', (e) => {
-    if (operator === "") {                    // magically the link disappeares when numbers are clicked
-        firstOperand += e.target.innerText;   // even though I am not removing the div child 
-        firstOperand = +firstOperand          // my guess is since the text content get added it removes
-        display2.textContent = firstOperand;  // the child div
+    if (operator === "") {
+        firstOperand += e.target.innerText
+        firstOperand = +firstOperand
+        display2.textContent = firstOperand;
     } else {
-        secondOperand += e.target.innerText;
+        secondOperand += e.target.innerText
         secondOperand = +secondOperand
         display2.textContent = secondOperand;
     }
@@ -105,7 +105,7 @@ backspace.addEventListener('click', (e) => {
     if ((!(firstOperand == "")) && (!(operator == "")) && (!(secondOperand == ""))) {
         let arrayOfDigits = secondOperand.toString().split('')
         arrayOfDigits.pop()
-        secondOperand = +(arrayOfDigits.join(''))
+        secondOperand = arrayOfDigits.join('')
         display2.textContent = secondOperand
     } else if ((!(firstOperand == "")) && (!(operator == "")) && (secondOperand == "")) {
         operator = ''
@@ -114,7 +114,7 @@ backspace.addEventListener('click', (e) => {
     } else if ((!(firstOperand == "")) && (operator == "") && (secondOperand == "")) {
         let arrayOfDigits = firstOperand.toString().split('')
         arrayOfDigits.pop()
-        firstOperand = +(arrayOfDigits.join(''))
+        firstOperand = arrayOfDigits.join('')
         display1.textContent = ''
         display2.textContent = firstOperand
     }
