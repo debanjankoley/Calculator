@@ -1,17 +1,17 @@
 function addition(a, b) {
-    return +((+a + +b).toFixed(7));
+    return +((+a + +b).toFixed(4));
 }
 
 function multiplication(a, b) {
-    return +((+a * +b).toFixed(7));
+    return +((+a * +b).toFixed(4));
 }
 
 function substraction(a , b) {
-    return +((+a - +b).toFixed(7));
+    return +((+a - +b).toFixed(4));
 }
 
 function division(a, b) {
-    return +((+a / +b).toFixed(7));
+    return +((+a / +b).toFixed(4));
 }
 
 let firstOperand = ''
@@ -49,11 +49,9 @@ const numbers = document.querySelectorAll('.numbers');
 numbers.forEach(button => button.addEventListener('click', (e) => {
     if (operator === "") {
         firstOperand += e.target.innerText
-        firstOperand = +firstOperand
         display2.textContent = firstOperand;
     } else {
         secondOperand += e.target.innerText
-        secondOperand = +secondOperand
         display2.textContent = secondOperand;
     }
 }));
@@ -67,7 +65,6 @@ sign.forEach(button => button.addEventListener('click', (e) => {
         display1.textContent = firstOperand + " " + operator  
     }
 }));
-
 
 const equalTo = document.querySelector('.equalTo');
 equalTo.addEventListener("click", (e) => {
@@ -83,7 +80,7 @@ equalTo.addEventListener("click", (e) => {
         firstOperand = secondOperand = operator = display1.textContent = display2.textContent = ''
         display2.appendChild(div)
     } else {
-        display2.textContent = firstOperand
+        display2.textContent = +firstOperand
     }
     operator = '';
 })
