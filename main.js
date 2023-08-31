@@ -1,17 +1,17 @@
 function addition(a, b) {
-    return +a + +b;
+    return +((+a + +b).toFixed(7));
 }
 
 function multiplication(a, b) {
-    return +a * +b;
+    return +((+a * +b).toFixed(7));
 }
 
 function substraction(a , b) {
-    return +a - +b;
+    return +((+a - +b).toFixed(7));
 }
 
 function division(a, b) {
-    return +a / +b;
+    return +((+a / +b).toFixed(7));
 }
 
 let firstOperand = ''
