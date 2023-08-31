@@ -1,5 +1,5 @@
 function addition(a, b) {
-    return a + b;
+    return +a + +b;
 }
 
 function multiplication(a, b) {
@@ -47,11 +47,11 @@ const display2 = document.querySelector('.display2');
 
 const numbers = document.querySelectorAll('.numbers');
 numbers.forEach(button => button.addEventListener('click', (e) => {
-    if (operator === "") {
-        firstOperand += e.target.innerText;   // magically the link disappeares when numbers are clicked
-        firstOperand = +firstOperand          // even though I am not removing the div child 
-        display2.textContent = firstOperand;  // my guess is since the text content get updated it removes
-    } else {                                  // the child div as well
+    if (operator === "") {                    // magically the link disappeares when numbers are clicked
+        firstOperand += e.target.innerText;   // even though I am not removing the div child 
+        firstOperand = +firstOperand          // my guess is since the text content get added it removes
+        display2.textContent = firstOperand;  // the child div
+    } else {
         secondOperand += e.target.innerText;
         secondOperand = +secondOperand
         display2.textContent = secondOperand;
@@ -105,19 +105,36 @@ backspace.addEventListener('click', (e) => {
     if ((!(firstOperand == "")) && (!(operator == "")) && (!(secondOperand == ""))) {
         let arrayOfDigits = secondOperand.toString().split('')
         arrayOfDigits.pop()
-        secondOperand = arrayOfDigits.join('')
-        secondOperand = +secondOperand
+        secondOperand = +(arrayOfDigits.join(''))
         display2.textContent = secondOperand
     } else if ((!(firstOperand == "")) && (!(operator == "")) && (secondOperand == "")) {
         operator = ''
         display1.textContent = ''
         display2.textContent = firstOperand
     } else if ((!(firstOperand == "")) && (operator == "") && (secondOperand == "")) {
-        arrayOfDigits = firstOperand.toString().split('')
+        let arrayOfDigits = firstOperand.toString().split('')
         arrayOfDigits.pop()
-        firstOperand = arrayOfDigits.join('')
-        firstOperand = +firstOperand
+        firstOperand = +(arrayOfDigits.join(''))
         display1.textContent = ''
         display2.textContent = firstOperand
+    }
+})
+
+const decimal = document.querySelector('.decimal');
+decimal.addEventListener('click', (e) => {
+    if (operator === '') {
+        let arrayOfDigits = firstOperand.toString().split('')
+        let checkForDecimal = arrayOfDigits.find( item => item == '.')
+        if (checkForDecimal != '.') {
+            firstOperand += e.target.innerText
+            display2.textContent = firstOperand
+        }
+    } else {
+        let arrayOfDigits = secondOperand.toString().split('')
+        let checkForDecimal = arrayOfDigits.find( item => item == '.')
+        if (checkForDecimal != '.') {
+            secondOperand += e.target.innerText
+            display2.textContent = secondOperand
+        }
     }
 })
