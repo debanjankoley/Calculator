@@ -35,7 +35,7 @@ const div = document.createElement('div')
 div.setAttribute('id', 'link-container')
 const a = document.createElement('a')
 a.setAttribute('id', 'link')
-a.textContent = 'Click me'
+a.textContent = '👉 Click me'
 a.setAttribute('href', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ')
 a.setAttribute('target', '_blank')           // there must be better way to set multiple attributes
 a.setAttribute('rel', 'noopener noreferrer')
