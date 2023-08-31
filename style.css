@@ -81,3 +81,13 @@ button {
 .keys-container button {
     width: 22%;
 }
+
+a:hover {
+    text-decoration: none;
+    background-color: #cdfeaa;
+}
+
+a:link,
+a:visited {
+    color: blue;
+}
